@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <meta name="google-signin-client_id" content="516366002310-lqa6u86n18gonle2rsr9ktu633onlniq.apps.googleusercontent.com"> -->
+    <meta name="google-signin-client_id" content="227202775499-qvj4945b0ebpf99es24lfgpab5ps80od.apps.googleusercontent.com">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <title>Google Sign-in</title>
+</head>
+
+<body>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <script>
+        function onSignIn(googleUser) {
+            console.table("googleUser");
+        }
+    </script>
+</body>
+
+</html>
