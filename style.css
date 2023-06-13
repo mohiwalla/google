@@ -1,0 +1,73 @@
+* {
+            font-family: 'Montserrat', sans-serif;
+            user-select: none !important;
+            transition: all 0.3s;
+        }
+
+        .SignInGoogle {
+            display: grid;
+            place-items: center;
+        }
+
+        body {
+            padding: 50px 5vw;
+            margin: 0;
+            display: grid;
+        }
+
+        #submit {
+            max-width: 270px;
+            display: block;
+            margin: auto;
+        }
+
+        #dp {
+            max-width: 96;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            object-fit: contain;
+        }
+
+        .container {
+            max-width: 768px;
+            display: grid;
+        }
+
+        .makePass {
+            float: right;
+            position: relative;
+            top: -10px;
+        }
+
+        @media (width < 430px) {
+            .makePass {
+                float: none;
+                display: block;
+                margin: 20px 0 0 -24px;
+                top: 0px;
+            }
+
+            #dp {
+                max-width: 60px;
+            }
+        }
+
+        @media (width > 700px) {
+            #firstName {
+                float: right;
+                position: relative;
+                top: -90px;
+            }
+
+            #nameNimg {
+                height: 135px;
+            }
+
+            .row1,
+            .row2 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                justify-content: space-evenly;
+            }
+        }
