@@ -1,7 +1,6 @@
-
-        function success(response) {
-            const decodedCredential = jwt_decode(response.credential);
-            document.body.innerHTML = `<div class="container">
+function success(response) {
+    const decodedCredential = jwt_decode(response.credential);
+    document.body.innerHTML = `<div class="container">
         <div id="nameNimg">
             <img id="dp" src="${decodedCredential.picture}" alt="Your Image Here 🙂"><br><br>
             <h1 id="firstName">Hey, ${decodedCredential.given_name}</h1>
@@ -46,106 +45,107 @@
         <button id="submit" onclick="hidepass()" type="submit" class="btn btn-primary">Create my free Account</button>
 
     </div>`;
-        }
+}
 
-        id = (str) => {
-            return document.getElementById(str);
-        }
+id = (str) => {
+    return document.getElementById(str);
+}
 
-        function generatePass() {
-            const uppercase = [
-                "A",
-                "B",
-                "C",
-                "D",
-                "E",
-                "F",
-                "G",
-                "H",
-                "I",
-                "J",
-                "K",
-                "L",
-                "M",
-                "N",
-                "O",
-                "P",
-                "Q",
-                "R",
-                "S",
-                "T",
-                "U",
-                "V",
-                "W",
-                "X",
-                "Y",
-                "Z",
-            ];
-            const lowercase = [
-                "a",
-                "b",
-                "c",
-                "d",
-                "e",
-                "f",
-                "g",
-                "h",
-                "i",
-                "j",
-                "k",
-                "l",
-                "m",
-                "n",
-                "o",
-                "p",
-                "q",
-                "r",
-                "s",
-                "t",
-                "u",
-                "v",
-                "w",
-                "x",
-                "y",
-                "z",
-            ];
-            const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+function generatePass() {
+    const uppercase = [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+    ];
+    const lowercase = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+    ];
+    const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-            let password = "";
+    let password = "";
 
-            arr = [numbers, lowercase, uppercase];
+    arr = [numbers, lowercase, uppercase];
 
-            for (i = 0; i < 16; i++) {
-                rac = arr[rand(3)]; // Random Array of Characters
-                makePassword(rac[rand(rac.length)]);
-            }
+    for (i = 0; i < 16; i++) {
+        rac = arr[rand(3)]; // Random Array of Characters
+        makePassword(rac[rand(rac.length)]);
+    }
 
-            function makePassword(str) {
-                password = password.concat(str);
-            }
+    function makePassword(str) {
+        password = password.concat(str);
+    }
 
-            id("pass").value = password;
-            id("Cpass").value = password;
-            if (!id("showPass").checked)
-                id("showPass").click();
-        }
+    id("pass").value = password;
+    id("Cpass").value = password;
+    if (!id("showPass").checked)
+        id("showPass").click();
+}
 
-        function rand(num) {
-            return Math.floor(Math.random() * num);
-        }
+function rand(num) {
+    return Math.floor(Math.random() * num);
+}
 
-        function showpass() {
-            checkbox = document.getElementById('showPass');
-            if (checkbox.checked) {
-                document.getElementById("pass").type = "text";
-                document.getElementById("Cpass").type = "text";
-            }
-            else {
-                document.getElementById("pass").type = "password";
-                document.getElementById("Cpass").type = "password";
-            }
-        }
-        function hidepass() {
-            document.getElementById("pass").type = "password";
-            document.getElementById("Cpass").type = "password";
-        }
+function showpass() {
+    checkbox = document.getElementById('showPass');
+    if (checkbox.checked) {
+        document.getElementById("pass").type = "text";
+        document.getElementById("Cpass").type = "text";
+    }
+    else {
+        document.getElementById("pass").type = "password";
+        document.getElementById("Cpass").type = "password";
+    }
+}
+
+function hidepass() {
+    document.getElementById("pass").type = "password";
+    document.getElementById("Cpass").type = "password";
+}
